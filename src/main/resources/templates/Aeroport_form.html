@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/vols_form.css" />
+  <title>Document</title>
+</head>
+<body>
+<div class="container">
+  <h1>[[${pageTitle}]]</h1>
+
+  <div class="deplacer">
+    <div class="ajoutAirport">
+      <form th:action="@{/aeroport/save}" method="post" th:object="${aeroport}">
+        <input type="hidden" th:field="*{id_aeroport}">
+        <img src="/images/SSMAlogo.png" alt="" />
+        <table>
+          <tr>
+            <td class="td1">Localisation
+            </td>
+            <td>
+              <input
+                      th:field="*{localisation}"
+                      type="text"
+                      name="ground_waiting_time"
+                      id="nbr"
+                      class="input"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td class="td1">NombrePistes</td>
+            <td>
+              <input
+                      th:field="*{nbPistes}"
+                      type="text"
+                      name="waiting_loop_duration"
+                      id="nbr1"
+                      class="input"
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td class="td1">DélaiAntiCollision</td>
+            <td>
+              <input
+                      th:field="*{delaiAntiCollision}"
+                      type="text"
+                      name="number_of_floor_space"
+                      id="nbr2"
+                      class="input"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td class="td1">DélaiAttente_Sol</td>
+            <td>
+              <input
+                      th:field="*{delaiAttenteSol}"
+                      type="text"
+                      name="landing_time"
+                      id="nbr3"
+                      class="input"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td class="td1">Nombre Max</td>
+            <td>
+              <input
+                      th:field="*{nbMax}"
+                      type="text"
+                      name="landing_time"
+                      id="nbr4"
+                      class="input"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td class="td1">NombrePlacesSol</td>
+            <td>
+              <input
+                      th:field="*{nbPlaceSol}"
+                      type="text"
+                      name="landing_time"
+                      id="nbr7"
+                      class="input"
+              />
+            </td>
+          </tr>
+        </table>
+        <div class="sbmt">
+          <button type="submit" class="submit">Ajouter</button>
+          <button type="button" onclick="cancelForm()" class="submit">Annuler</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  function cancelForm() {
+    window.location = "/Aeroport"
+  }
+</script>
+<!-- <script src="js/addAreoport.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque&family=Dancing+Script:wght@500;600&family=Lora&family=Mulish:wght@200&family=Roboto:wght@100&family=Rubik:wght@300&family=Ruwudu&family=Sanchez&family=Ubuntu:wght@300&family=Young+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque&family=Dancing+Script:wght@500;600&family=Lora&family=Mulish:wght@200&family=Roboto:wght@100&family=Rubik:wght@300&family=Ruwudu&family=Sanchez&family=Ubuntu:wght@300;700&family=Young+Serif&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.ajoutAirport {
+  width: 39%;
+  margin: 0 auto;
+  color: orange;
+  font-weight: bold;
+  padding-left: 20px;
+  background: black;
+  height: 600px;
+  box-shadow: 0 0 100px orange;
+  border-bottom-right-radius: 30px;
+  border-top-left-radius: 30px;
+  border: 2px solid orange;
+}
+.deplacer {
+  padding-top: 80px;
+}
+
+#nbr {
+  width: 50px;
+  height: 25px;
+}
+.input {
+  height: 25px;
+  padding-left: 5px;
+  border: none;
+  border-bottom: 2px solid orange;
+  border-radius: 6px;
+  background: transparent;
+  outline: none;
+  color: white;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
+}
+td {
+  padding-bottom: 20px;
+  padding-left: 20px;
+}
+table {
+  padding-top: 200px;
+  padding-left: 57px;
+}
+.submit {
+  padding: 5px;
+  height: 40px;
+  width: 90px;
+  font-size: 15px;
+  background: black;
+  border: 2px solid orange;
+  color: orange;
+  font-weight: bold;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.sbmt {
+  position: absolute;
+  padding-left: 232px;
+  padding-top: 30px;
+}
+.td1 {
+  padding-right: 100px;
+  text-shadow: 3px 3px 5px rgb(0, 0, 0, 1);
+}
+h1 {
+  position: absolute;
+  padding-top: 100px;
+  padding-left: 584px;
+  font-size: 50px;
+  color: white;
+  text-shadow: 0px 0px 7px orange;
+}
+.submit:hover {
+  background: orange;
+  border: 2px solid black;
+  color: black;
+}
+img {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  padding-top: 20px;
+  padding-left: 170px;
+}

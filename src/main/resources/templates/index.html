@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/index.css" />
+  <title>Document</title>
+</head>
+<body>
+<div class="container">
+  <img
+          src="/images/SSMAlogo.png"
+          width="150px"
+          height="150px"
+          class="logo"
+  />
+  <div class="headPosition">
+    <h1 class="head1" id="element"></h1>
+  </div>
+  <div class="content">
+    <p>
+      with <b>SSMA</b> aviation enthusiasts can experience the thrill of a
+      realistic airborne simulation.
+      <br />
+      Immerse yourself in a virtual world where you can navigate through
+      the<br />
+      skies, mastering the art of aviation with cutting-edge technology
+    </p>
+    <div>
+      <button type="button" onclick="redirectToAeroport()"><span></span>Gestion des aerports</button>
+      <button type="button" onclick="redirectToVol()"><span></span>Gestion des vols</button>
+      <button type="button" onclick="redirectToSimulation()"><span></span>Simulation</button>
+    </div>
+  </div>
+</div>
+<!-- Element to contain animated typing -->
+
+<!-- Load library from the CDN -->
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+<!-- Setup and start animation! -->
+<script>
+  var typed = new Typed("#element", {
+    strings: [
+      "Flight Simulation",
+      "by..",
+      "   <p style='color: rgb(117, 76, 1); text-shadow: 5px 5px 7px black;'>Salma</p>",
+      "    <p style='color: orange; text-shadow: 5px 5px 7px black;'>Salwa</p>",
+      "     <p style='color: rgb(117, 76, 1); text-shadow: 5px 5px 7px black;'>Moad</p>",
+      "and",
+      "       <p style='color: orange; text-shadow: 5px 5px 7px black;'>Akram</p>",
+      "Flight Simulation",
+    ],
+    typeSpeed: 50, // Vitesse de frappe
+    backSpeed: 10, // Vitesse de suppression (plus la valeur est petite, plus la suppression est rapide)
+    startDelay: 300, // Pause avant de commencer la suppression
+    showCursor: true, // Pour afficher le curseur
+  });
+  function redirectToSimulation() {
+    // Rediriger vers la page Map.html
+    window.location.href = "http://localhost:8087/map";
+  }
+  function redirectToVol() {
+    window.location.href = "/vols/Vol";
+  }
+  function redirectToAeroport() {
+    // Rediriger vers la page Map.html
+    window.location.href = "/Aeroport";
+  }
+</script>
+<script src="/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/vols_form.css" />
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+    <h1>[[${pageTitle}]]</h1>
+
+    <div class="deplacer">
+        <div class="ajoutAirport">
+            <form th:action="@{/vols/vol/save}" method="post" th:object="${vol}">
+                <input type="hidden" th:field="*{id_Vol}">
+                <img src="/images/SSMAlogo.png" alt="" />
+                <table>
+                    <tr>
+                        <td class="td1">aeroportDepart
+                        </td>
+                        <td>
+                            <input
+                                    th:field="*{aeroportDepart}"
+                                    type="text"
+                                    name="ground_waiting_time"
+                                    id="nbr"
+                                    class="input"
+                            />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td1">aeroportArrive</td>
+                        <td>
+                            <input
+                                    th:field="*{aeroportArrive}"
+                                    type="text"
+                                    name="waiting_loop_duration"
+                                    id="nbr1"
+                                    class="input"
+                            />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="td1">heureDepart</td>
+                        <td>
+                            <input
+                                    th:field="*{heureDepart}"
+                                    type="time"
+                                    name="number_of_floor_space"
+                                    id="nbr2"
+                                    class="input"
+                            />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td1">heureArrive</td>
+                        <td>
+                            <input
+                                    th:field="*{heureArrive}"
+                                    type="time"
+                                    name="landing_time"
+                                    id="nbr3"
+                                    class="input"
+                            />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td1">Fuite réservoire</td>
+                        <td>
+                            <input type="checkbox" id="switch" th:checked="${vol.stop}" name="stop" />
+                            <label for="switch">Toggle</label>
+                            <input type="hidden" th:field="*{stop}" />
+                        </td>
+                    </tr>
+
+
+                </table>
+
+
+                <div class="sbmt">
+                    <button type="submit" class="submit">Ajouter</button>
+                    <button type="button" onclick="cancelForm()" class="submit">Annuler</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function cancelForm() {
+        window.location = "/vols/Vol"
+    }
+</script>
+
+</body>
+</html>

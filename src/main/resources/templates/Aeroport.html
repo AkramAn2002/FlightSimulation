@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestion des aeroports</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="/css/Vol.css">
+</head>
+<body>
+<div class="container-fluid text-center ">
+  <div><h1 class="display-4">Gestion des Aeroports</h1></div>
+  <div class="mt-4" >
+    <a class="btn btn-primary btn-lg" id="btn" th:href="@{/aeroport/new}" role="button"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACy0lEQVR4nO2azW7TQBCAfYJyAJWfxjMRIhw48QiUIwJVAsGRlmdArXgLCAcQSIgrjwC00JMlz5hGiCOiadoTPxdEOdPsCqNJk1CIHTvObmxHHWkkS1bi+TQ/nvGs4xzKlEpI504qH28pxromXFUETcXwUxHsdXT/erNzj7GuGG+GXm3WKYKEaxeOasY7mmBdMWrNGI6i3d+80YRL8l/OxAHenT2mGe4pgm+jGh8LRfBVE66EXm1mIhCKYEER7pgCiADaVgFeswYgrlcEj20BRITdC/G8WYiNiqsZP0wKQveU8H0YuBVDEO55cffEIbjnGWiJDeNB+DAnZTQvCN3PG9wJvTnIBuHVZnIJJx4SZllKtCJ8lrvxPBBmT0aEgIW8jdaxMHg1fZll2CosCMF2qpemvLHzNlYnKeFysjekVcjbUE70ypehid9pAAtgqE6jPi7GgxCsm35gO6heavs4bwFmLX6eyNCKJ+kBb5sNL0YVNk6dGACRochGCNgC0QLju9cHQRgflg6E8EFEfuBq2UA0w8sIj0CrbCCKoDkIQrBbOhDG71Ege+OUWCejjFOaFcMvsyA+zmcGIbxsGmR3OkKL7XS8VkEINqe5/GK9bCCK4P70tiihV5stVdNI2I5sGvfzBN6afqCU5nFKrI5TwteREN2EX7IRAlY0qN6ejlH348UjsSBdr6zkbahO1rtDIQ54pVlYbzC0Un9xlP1EMUMKfyuqXkkF0YdhfFpAbzwaCaIXYvLhOG/j9V9tJCZ4LIyHZwqzVtiouJkg/ln0WBqDU4bTVhhAbSyIPkzgVnIKs4Ysm4xA/L8MlcoxGU/gc6u7d9lP2Aw1JScmRi2xWaVb0ZalVTCYC5/ljZ3PCQgB8nGxe75EZQgfJV2sNICZS6tpkdlAUfWGfMbUjK9knlYEP/qHajrX+EnGU5nsZCgK+fRx44YcilMM+QPLgmnl2Sj2cQAAAABJRU5ErkJggg==" width="40px"></a>
+    <a class="btn btn-primary btn-lg" id="btnBis" onclick="retourner()" role="button"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC9klEQVR4nO2aS2/TQBDHc4JyAJVH45kIEQ4cEIIT3IAbAlUCwZGWz4Ba8S0gHEAgIa58BKCFnix51m2EOCKapj3xCCoCziS7YtE4iaGN3fj9qDrSKo6i2PPzf3Z2xutKZc92qWk6cVhaeEsKbCjCBUnQkgJ+SYKuM/rHq85vAhtS4E1t1icrRTC9eGq/EnhHESxJgUoJ1GHG4D9vFOEsn6uSOcDy8QNKwD1J8DWs875QBF8U4bw26xOZQEiCaUm4kRSAB9C6tPFaagAsvSR4nBaAR9i9YOWThVipGkrg+6wg1HAQvtO2UU0IwjjJcmcOIYbKQJt9iAdhwRSn0bwglDtvcEObUxANwqxP5BJOYocwi5KiJeGz3J0XI2H2JCQETOfttPKFwavB06yAtcKCEKwHWjR5xc7bWTVuEM6NV4NLhbwdFWNV+bzjxHcKwFgXwM0e4fke4aXUgSyc8QchWIoD0bWNs3yenoALGSiz6N9PRCjFt0PwJ39PPbwESt08cmgEhJuiiCf83l2unnNuho2npcBvGaihnWtbxvVREIEPy6CE2nr9Bx7zAxfKooRyB7z0UATaZVFCuX5AaxSE4Gd5lEDXFy+QbpA/c2qtpGw9Cy8GA4HfxQYReDkOSNTQ6hQrtETwirdAk301jfTbKUj6xUb5FkS4n2aJ0sm1RNFmfbJURSNhz7No7M8TeFuaMp7wtXfy7k/42Zh3aZMhgq4DsYZdu707Wt0PZ/b5ggxUmc/bUTV+3N0R4j9VWoVVQ0A78BNH3p8oZkjhH0m1K4EgXBiBTwuoxqNQEMMQ4wfHeTuv/o3m2AnuC2PiscJsK6xUjUgQWzZ6QrTBKYTTmrahHgvChbGNak5h1uTNpkQgtm+GcubIRgl8nureO+9PpBlqkt+YCJtio9ogo81xqZDgXPjEK3Y+b0AwkIUzg/dLZITwkVzFcgEYObUmbdwbSKrd4MeYSuAr7qclwQ/3pRrnGD9ye8qdHTdFWhw9mLgje1Yphv0FXhYzayGiwgwAAAAASUVORK5CYII=" width="40px"></a>
+  </div>
+  <div th:if="${message}" class="alert alert-success text-center mt-4">
+    <strong>Success!</strong> [[${message}]]
+  </div>
+  <div class="mt-4">
+    <table>
+      <thead class="thead-dark">
+      <tr>
+        <th>Id_Aeroport</th>
+        <th>Localisation</th>
+        <th>NombrePistes</th>
+        <th>DélaiAntiCollision</th>
+        <th>DélaiAttente_Sol</th>
+        <th>Nb_max</th>
+        <th>NombrePlacesSol</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="Aeroport : ${listAeroports}">
+        <td th:text="${Aeroport.id_aeroport}"></td>
+        <td th:text="${Aeroport.localisation}"></td>
+        <td th:text="${Aeroport.nbPistes}"></td>
+        <td th:text="${Aeroport.delaiAntiCollision}">
+        <td th:text="${Aeroport.delaiAttenteSol}"></td>
+        <td th:text="${Aeroport.nbMax}"></td>
+        <td th:text="${Aeroport.nbPlaceSol}"></td>
+        <td>
+          <a type="button" th:href="@{'/aeroport/edit/' + ${Aeroport.id_aeroport}}"><i class="fa-solid fa-pen-to-square" ></i></a>
+          <a type="button" th:href="@{'/aeroport/delete/' + ${Aeroport.id_aeroport}}"><i class="fa-solid fa-trash"></i></a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <br>
+  </div>
+</div>
+<script type="text/javascript">
+  function retourner() {
+    window.location = "/"
+  }
+</script>
+</body>
+</html>

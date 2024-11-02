@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque&family=Dancing+Script:wght@500;600&family=Lora&family=Mulish:wght@200&family=Roboto:wght@100&family=Rubik:wght@300&family=Ruwudu&family=Sanchez&family=Ubuntu:wght@300&family=Young+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque&family=Dancing+Script:wght@500;600&family=Lora&family=Mulish:wght@200&family=Roboto:wght@100&family=Rubik:wght@300&family=Ruwudu&family=Sanchez&family=Ubuntu:wght@300;700&family=Young+Serif&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Ubuntu", sans-serif;
+}
+body
+{
+    background-color: black;
+    color: white;
+}
+th
+{
+    border: 5px solid orange;
+}
+#btn1
+{
+    background-color: black;
+    color: orange;
+    border: 1px solid orange;
+    font-weight: bold;
+    border-radius: 7px;
+    width: 100px;
+    font-size: 15px;
+}
+#btn1:hover
+{
+    background-color: orange;
+    color: black;
+    border: 1px solid black;
+    font-weight: bold;
+    border-radius: 7px;
+}
+#btn2
+{
+    background-color: orange;
+    color: black;
+    border: 1px solid black;
+    font-weight: bold;
+    border-radius: 7px;
+    width: 100px;
+    font-size: 15px;
+}
+#btn2:hover
+{
+    background-color: black;
+    color: orange;
+    border: 1px solid orange;
+    font-weight: bold;
+    border-radius: 7px;
+}
+.display-4
+{
+    text-shadow: 0 0 7px orange;
+}
+#btn,#btnBis
+{
+    background-color: black;
+    color: orange;
+    font-weight: bold;
+    border: 3px solid orange;
+    border-radius: 100px;
+}
+table {
+    border: 2px solid orange;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+
+}
+
+/* Style pour les en-têtes de colonnes */
+th {
+    padding: 8px;
+    text-align: center;
+    color: black;
+    background-color: orange;
+    border: 3px solid black;
+}
+
+/* Style pour les cellules de données */
+td {
+    border: 3px solid orange;
+    padding: 8px;
+    text-align: center;
+}
+.fa-solid
+{
+    color: orange;
+}
