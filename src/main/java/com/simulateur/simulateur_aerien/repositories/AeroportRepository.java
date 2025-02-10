@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.Optional;
 
 public interface AeroportRepository extends JpaRepository<Aeroport, Long> {
-    Optional<Aeroport> findByLocalisation(String localisation);
+   Optional<Aeroport> findByLocalisation(String localisation);
 
     @Query("SELECT COUNT(a) FROM Aeroport a WHERE a.id_aeroport = :id_aeroport")
     Long countByid_aeroport(@Param("id_aeroport") Long id_aeroport);
